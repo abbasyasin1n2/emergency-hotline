@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Emergency Service Directory</title>
     
     <!-- Font Awesome -->
@@ -49,7 +49,7 @@
                 
                 <!-- Copy Count Button -->
                 <div class="flex items-center justify-center cursor-pointer transition-opacity hover:opacity-90" style="height: 52px; width: 137px; padding: 12px 36px; border-radius: 50px; background-color: #00A63E;">
-                    <span id="copyCount" style="font-weight: 600; font-size: 16px; color: #ffffff;">2</span>
+                    <span id="copyCount" style="font-weight: 600; font-size: 16px; color: #ffffff;">0</span>
                     <span class="ml-1" style="font-weight: 600; font-size: 16px; color: #ffffff;">Copy</span>
                 </div>
             </div>
@@ -461,24 +461,24 @@
             
             <!-- Call History Section (Right Side) -->
             <div class="lg:col-span-3">
-                <div class="bg-white rounded-lg shadow-lg p-6 sticky top-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 sticky top-8" style="border-radius: 16px;">
                     <!-- History Header -->
                     <div class="flex items-center justify-between mb-6">
                         <div class="flex items-center gap-2">
-                            <i class="fas fa-clock-rotate-left text-gray-600"></i>
-                            <h2 class="text-lg font-semibold text-gray-800">Call History</h2>
+                            <i class="fas fa-clock-rotate-left" style="color: #666666; font-size: 18px;"></i>
+                            <h2 style="font-family: 'Hind Madurai', sans-serif; font-weight: 700; font-size: 20px; color: #000000; margin: 0;">Call History</h2>
                         </div>
-                        <button id="clearHistoryBtn" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm font-medium transition-colors">
+                        <button id="clearHistoryBtn" style="background-color: #00A63E; color: white; padding: 8px 16px; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.backgroundColor='#059669'" onmouseout="this.style.backgroundColor='#00A63E'">
                             Clear
                         </button>
                     </div>
                     
                     <!-- History Content -->
-                    <div id="callHistory" class="space-y-3">
+                    <div id="callHistory" class="history-scroll" style="max-height: 500px; overflow-y: auto;">
                         <!-- History items will be populated here -->
-                        <div class="text-center text-gray-500 py-8">
-                            <i class="fas fa-phone text-2xl mb-2 opacity-50"></i>
-                            <p class="text-sm">No call history yet</p>
+                        <div id="emptyState" class="text-center text-gray-500 py-12">
+                            <i class="fas fa-phone" style="font-size: 24px; color: #999999; margin-bottom: 8px;"></i>
+                            <p style="font-family: 'Roboto', sans-serif; font-size: 14px; color: #999999; margin: 0;">No call history yet</p>
                         </div>
                     </div>
                 </div>
