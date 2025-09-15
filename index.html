@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Service Directory</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600;700&family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    
+    <!-- DaisyUI and Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="navbar bg-white shadow-lg px-6 py-4" style="height: 50px;">
+        <div class="navbar-start">
+            <div class="flex items-center" style="width: 195.72px; height: 50px; gap: 10px;">
+                <img src="assets/logo.png" alt="Emergency Service Logo" style="width: 50px; height: 50px;">
+                <div style="width: 135.72px; height: 44.69px; display: flex; flex-direction: column; justify-content: center;">
+                    <h1 class="text-lg font-bold leading-tight" style="color: #006747;">Emergency</h1>
+                    <p class="text-sm leading-tight" style="color: #006747;">Service</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="navbar-end">
+            <div class="flex items-center" style="height: 52px; width: 397px; gap: 10px;">
+                <!-- Heart Count -->
+                <div class="flex items-center justify-center" style="height: 52px; width: 132px; padding: 12px; border-radius: 50px; background-color: rgba(65, 255, 107, 0.1);">
+                    <span id="heartCount" style="font-family: Inter; font-weight: 900; font-size: 16px; color: #000000;">0</span>
+                    <i class="fas fa-heart text-red-500 ml-2" style="width: 30px; height: 30px; font-size: 20px;"></i>
+                </div>
+                
+                <!-- Coin Count -->
+                <div class="flex items-center justify-center" style="height: 52px; width: 106px; padding: 12px 20px; border-radius: 50px; background-color: rgba(65, 255, 107, 0.1);">
+                    <span id="coinCount" style="font-family: Inter; font-weight: 900; font-size: 16px; color: #000000;">100</span>
+                    <img src="assets/coin.png" alt="Coin" class="ml-2" style="width: 24px; height: 24px;">
+                </div>
+                
+                <!-- Copy Count Button -->
+                <div class="flex items-center justify-center cursor-pointer transition-opacity hover:opacity-90" style="height: 52px; width: 137px; padding: 12px 36px; border-radius: 50px; background-color: #00A63E;">
+                    <span id="copyCount" style="font-weight: 600; font-size: 16px; color: #ffffff;">2</span>
+                    <span class="ml-1" style="font-weight: 600; font-size: 16px; color: #ffffff;">Copy</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white relative overflow-hidden" style="background: linear-gradient(180deg, #013223 0%, #006747 50%, #013223 100%);">
+        <div class="flex flex-col items-center justify-center text-center" style="height: 239px; width: 1920px; padding: 12px 60px; margin: 0 auto;">
+            <!-- Government Logo -->
+            <div class="flex justify-center mb-6">
+                <img src="assets/logo.png" alt="Bangladesh Government Logo" style="width: 92px; height: 92px;">
+            </div>
+            
+            <!-- Main Title -->
+            <div style="height: 55px; width: 1800px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                <h1 style="font-family: 'Hind Madurai', sans-serif; font-weight: 700; font-size: 40px; color: #ffffff; line-height: 1.2; margin: 0;">
+                    Emergency Service Directory
+                </h1>
+            </div>
+            
+            <!-- Subtitle -->
+            <div style="height: 28px; width: 1800px; display: flex; align-items: center; justify-content: center;">
+                <p style="font-family: 'Hind Madurai', sans-serif; font-weight: 600; font-size: 20px; color: #ffffff; line-height: 1.4; margin: 0;">
+                    Government Emergency Services at Your Fingertip – A Project by Government of the People's Republic of Bangladesh
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container mx-auto px-6 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Emergency Cards Section (Left Side) -->
+            <div class="lg:col-span-9">
+                <div id="emergencyCards" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- Cards will be populated here -->
+                </div>
+            </div>
+            
+            <!-- Call History Section (Right Side) -->
+            <div class="lg:col-span-3">
+                <div class="bg-white rounded-lg shadow-lg p-6 sticky top-8">
+                    <!-- History Header -->
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-clock-rotate-left text-gray-600"></i>
+                            <h2 class="text-lg font-semibold text-gray-800">Call History</h2>
+                        </div>
+                        <button id="clearHistoryBtn" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm font-medium transition-colors">
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <!-- History Content -->
+                    <div id="callHistory" class="space-y-3">
+                        <!-- History items will be populated here -->
+                        <div class="text-center text-gray-500 py-8">
+                            <i class="fas fa-phone text-2xl mb-2 opacity-50"></i>
+                            <p class="text-sm">No call history yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript will be added in later prompts -->
+    <script src="script.js"></script>
+</body>
+</html>
