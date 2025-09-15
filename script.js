@@ -162,10 +162,6 @@ function copySuccess(serviceName, number) {
     
     // Show success alert (native browser style)
     alert(`✅ Copied!\n\n${serviceName} number ${number} has been copied to clipboard.`);
-    
-    // Add visual feedback
-    const button = event.target.closest('button');
-    showSuccessFeedback(button);
 }
 
 // Add to call history
