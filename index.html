@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Service Directory</title>
     
     <!-- Font Awesome -->
@@ -58,21 +58,21 @@
 
     <!-- Hero Section -->
     <section class="hero-section text-white relative overflow-hidden" style="background: linear-gradient(180deg, #013223 0%, #006747 50%, #013223 100%);">
-        <div class="flex flex-col items-center justify-center text-center" style="height: 239px; width: 1920px; padding: 12px 60px; margin: 0 auto;">
+        <div class="container mx-auto flex flex-col items-center justify-center text-center" style="min-height: 239px; padding: 32px 20px;">
             <!-- Government Logo -->
             <div class="flex justify-center mb-6">
                 <img src="assets/logo.png" alt="Bangladesh Government Logo" style="width: 92px; height: 92px;">
             </div>
             
             <!-- Main Title -->
-            <div style="height: 55px; width: 1800px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <div class="w-full max-w-6xl mb-4">
                 <h1 style="font-family: 'Hind Madurai', sans-serif; font-weight: 700; font-size: 40px; color: #ffffff; line-height: 1.2; margin: 0;">
                     Emergency Service Directory
                 </h1>
             </div>
             
             <!-- Subtitle -->
-            <div style="height: 28px; width: 1800px; display: flex; align-items: center; justify-content: center;">
+            <div class="w-full max-w-6xl">
                 <p style="font-family: 'Hind Madurai', sans-serif; font-weight: 600; font-size: 20px; color: #ffffff; line-height: 1.4; margin: 0;">
                     Government Emergency Services at Your Fingertip – A Project by Government of the People's Republic of Bangladesh
                 </p>
@@ -81,11 +81,11 @@
     </section>
 
     <!-- Main Content Container -->
-    <main class="container mx-auto px-6 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <main class="container mx-auto px-4 py-8 max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
             <!-- Emergency Cards Section (Left Side) -->
             <div class="lg:col-span-9">
-                <div id="emergencyCards" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3" style="gap: 16px;">
+                <div id="emergencyCards" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                     
                     <!-- National Emergency Number Card -->
                     <div class="bg-white emergency-card" style="height: 360px; border-radius: 16px; padding: 32px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); position: relative; display: flex; flex-direction: column;">
@@ -112,18 +112,18 @@
                         
                         <!-- Category Badge -->
                         <div style="margin-bottom: 20px; flex-grow: 1;">
-                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">All</span>
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 500;">All</span>
                         </div>
                         
                         <!-- Action Buttons -->
-                        <div style="display: flex; gap: 6px; margin-top: auto;">
-                            <button class="copy-btn" style="height: 40px; flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('999', 'National Emergency Number')">
-                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                        <div style="display: flex; gap: 4px; margin-top: auto; width: 100%; max-width: 100%; box-sizing: border-box;">
+                            <button class="copy-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease; box-sizing: border-box; margin: 0;" onclick="handleCopyClick('999', 'National Emergency Number')">
+                                <i class="far fa-copy" style="color: #5C5C5C; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: #5C5C5C;">Copy</span>
                             </button>
-                            <button class="call-btn" style="height: 40px; flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('999', 'National Emergency Number')">
-                                <i class="fas fa-phone" style="color: white;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            <button class="call-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease; box-sizing: border-box; margin: 0;" onclick="handleCallClick('999', 'National Emergency Number')">
+                                <i class="fas fa-phone" style="color: white; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: white;">Call</span>
                             </button>
                         </div>
                     </div>
@@ -153,18 +153,18 @@
                         
                         <!-- Category Badge -->
                         <div style="margin-bottom: 24px;">
-                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Police</span>
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 500;">Police</span>
                         </div>
                         
                         <!-- Action Buttons -->
                         <div style="display: flex; gap: 6px;">
-                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('999', 'Police Helpline Number')">
-                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            <button class="copy-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease; box-sizing: border-box; margin: 0;" onclick="handleCopyClick('999', 'Police Helpline Number')">
+                                <i class="far fa-copy" style="color: #5C5C5C; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: #5C5C5C;">Copy</span>
                             </button>
-                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('999', 'Police Helpline Number')">
-                                <i class="fas fa-phone" style="color: white;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            <button class="call-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease; box-sizing: border-box; margin: 0;" onclick="handleCallClick('999', 'Police Helpline Number')">
+                                <i class="fas fa-phone" style="color: white; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: white;">Call</span>
                             </button>
                         </div>
                     </div>
@@ -194,18 +194,18 @@
                         
                         <!-- Category Badge -->
                         <div style="margin-bottom: 24px;">
-                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Fire</span>
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 500;">Fire</span>
                         </div>
                         
                         <!-- Action Buttons -->
                         <div style="display: flex; gap: 6px;">
-                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('999', 'Fire Service Number')">
-                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            <button class="copy-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('999', 'Fire Service Number')">
+                                <i class="far fa-copy" style="color: #5C5C5C; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: #5C5C5C;">Copy</span>
                             </button>
-                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('999', 'Fire Service Number')">
-                                <i class="fas fa-phone" style="color: white;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            <button class="call-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('999', 'Fire Service Number')">
+                                <i class="fas fa-phone" style="color: white; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: white;">Call</span>
                             </button>
                         </div>
                     </div>
@@ -235,18 +235,18 @@
                         
                         <!-- Category Badge -->
                         <div style="margin-bottom: 24px;">
-                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Health</span>
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 500;">Health</span>
                         </div>
                         
                         <!-- Action Buttons -->
                         <div style="display: flex; gap: 6px;">
-                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('1994-999999', 'Ambulance Service')">
-                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            <button class="copy-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('1994-999999', 'Ambulance Service')">
+                                <i class="far fa-copy" style="color: #5C5C5C; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: #5C5C5C;">Copy</span>
                             </button>
-                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('1994-999999', 'Ambulance Service')">
-                                <i class="fas fa-phone" style="color: white;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            <button class="call-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('1994-999999', 'Ambulance Service')">
+                                <i class="fas fa-phone" style="color: white; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: white;">Call</span>
                             </button>
                         </div>
                     </div>
@@ -276,18 +276,18 @@
                         
                         <!-- Category Badge -->
                         <div style="margin-bottom: 24px;">
-                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Help</span>
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 500;">Help</span>
                         </div>
                         
                         <!-- Action Buttons -->
                         <div style="display: flex; gap: 6px;">
-                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('109', 'Women & Child Helpline')">
-                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            <button class="copy-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('109', 'Women & Child Helpline')">
+                                <i class="far fa-copy" style="color: #5C5C5C; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: #5C5C5C;">Copy</span>
                             </button>
-                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('109', 'Women & Child Helpline')">
-                                <i class="fas fa-phone" style="color: white;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            <button class="call-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('109', 'Women & Child Helpline')">
+                                <i class="fas fa-phone" style="color: white; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: white;">Call</span>
                             </button>
                         </div>
                     </div>
@@ -317,18 +317,18 @@
                         
                         <!-- Category Badge -->
                         <div style="margin-bottom: 24px;">
-                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Govt</span>
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 500;">Govt</span>
                         </div>
                         
                         <!-- Action Buttons -->
                         <div style="display: flex; gap: 6px;">
-                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('106', 'Anti-Corruption Helpline')">
-                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            <button class="copy-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('106', 'Anti-Corruption Helpline')">
+                                <i class="far fa-copy" style="color: #5C5C5C; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: #5C5C5C;">Copy</span>
                             </button>
-                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('106', 'Anti-Corruption Helpline')">
-                                <i class="fas fa-phone" style="color: white;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            <button class="call-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('106', 'Anti-Corruption Helpline')">
+                                <i class="fas fa-phone" style="color: white; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: white;">Call</span>
                             </button>
                         </div>
                     </div>
@@ -358,18 +358,18 @@
                         
                         <!-- Category Badge -->
                         <div style="margin-bottom: 24px;">
-                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Electricity</span>
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 500;">Electricity</span>
                         </div>
                         
                         <!-- Action Buttons -->
                         <div style="display: flex; gap: 6px;">
-                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('16216', 'Electricity Helpline')">
-                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            <button class="copy-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('16216', 'Electricity Helpline')">
+                                <i class="far fa-copy" style="color: #5C5C5C; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: #5C5C5C;">Copy</span>
                             </button>
-                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('16216', 'Electricity Helpline')">
-                                <i class="fas fa-phone" style="color: white;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            <button class="call-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('16216', 'Electricity Helpline')">
+                                <i class="fas fa-phone" style="color: white; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: white;">Call</span>
                             </button>
                         </div>
                     </div>
@@ -399,18 +399,18 @@
                         
                         <!-- Category Badge -->
                         <div style="margin-bottom: 24px;">
-                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">NGO</span>
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 500;">NGO</span>
                         </div>
                         
                         <!-- Action Buttons -->
                         <div style="display: flex; gap: 6px;">
-                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('16445', 'Brac Helpline')">
-                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            <button class="copy-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('16445', 'Brac Helpline')">
+                                <i class="far fa-copy" style="color: #5C5C5C; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: #5C5C5C;">Copy</span>
                             </button>
-                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('16445', 'Brac Helpline')">
-                                <i class="fas fa-phone" style="color: white;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            <button class="call-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('16445', 'Brac Helpline')">
+                                <i class="fas fa-phone" style="color: white; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: white;">Call</span>
                             </button>
                         </div>
                     </div>
@@ -440,18 +440,18 @@
                         
                         <!-- Category Badge -->
                         <div style="margin-bottom: 20px; flex-grow: 1;">
-                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Travel</span>
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 500;">Travel</span>
                         </div>
                         
                         <!-- Action Buttons -->
-                        <div style="display: flex; gap: 6px; margin-top: auto;">
-                            <button class="copy-btn" style="height: 40px; flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('163', 'Bangladesh Railway Helpline')">
-                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                        <div style="display: flex; gap: 4px; margin-top: auto; width: 100%; max-width: 100%; box-sizing: border-box;">
+                            <button class="copy-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('163', 'Bangladesh Railway Helpline')">
+                                <i class="far fa-copy" style="color: #5C5C5C; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: #5C5C5C;">Copy</span>
                             </button>
-                            <button class="call-btn" style="height: 40px; flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('163', 'Bangladesh Railway Helpline')">
-                                <i class="fas fa-phone" style="color: white;"></i>
-                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            <button class="call-btn" style="height: 40px; width: 42%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 4px 1px; box-sizing: border-box; margin: 0; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('163', 'Bangladesh Railway Helpline')">
+                                <i class="fas fa-phone" style="color: white; font-size: 12px;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 500; color: white;">Call</span>
                             </button>
                         </div>
                     </div>
@@ -486,7 +486,6 @@
         </div>
     </main>
 
-    <!-- JavaScript will be added in later prompts -->
     <script src="script.js"></script>
 </body>
 </html>

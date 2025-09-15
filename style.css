@@ -1,8 +1,54 @@
 /* Emergency Service Directory - Custom Styles */
 
+/* Global layout improvements */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navbar improvements */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+.navbar-start, .navbar-end {
+    display: flex;
+    align-items: center;
+}
+
+/* Container improvements */
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Card hover effects */
 .emergency-card {
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Clean button styles */
+
+/* Ensure proper grid layout */
+.lg\\:col-span-9 {
+    width: 100%;
+}
+
+.lg\\:col-span-3 {
+    width: 100%;
 }
 
 .emergency-card:hover {
@@ -46,24 +92,37 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
-    /* Mobile layout adjustments */
-    .navbar-start, .navbar-end {
-        flex-direction: row !important;
-        gap: 8px !important;
+    /* Mobile navbar - Stack vertically */
+    .navbar {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 16px !important;
+        height: auto !important;
+        gap: 16px;
     }
     
-    /* Mobile navbar scaling */
-    nav[style*="height: 50px"] {
-        height: auto !important;
-        padding: 16px !important;
+    .navbar-start {
+        order: 1;
+    }
+    
+    .navbar-end {
+        order: 2;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .navbar-end > div {
+        width: auto !important;
+        min-width: 100px !important;
+    }
+    
+    /* Main content mobile spacing */
+    main.container {
+        padding: 16px 12px !important;
     }
     
     /* Emergency cards mobile layout */
-    #emergencyCards {
-        grid-template-columns: 1fr !important;
-        gap: 12px !important;
-    }
-    
     .emergency-card {
         height: auto !important;
         min-height: 320px !important;
@@ -75,15 +134,21 @@
         grid-column: span 1 !important;
     }
     
+    /* Call history mobile improvements */
+    .lg\\:col-span-3 .bg-white {
+        margin-top: 24px !important;
+        position: static !important;
+    }
+    
     /* Call history mobile */
     .history-scroll {
         max-height: 300px !important;
     }
     
     /* Hero section mobile */
-    .hero-section div[style*="width: 1920px"] {
-        width: 100% !important;
-        padding: 16px 20px !important;
+    .hero-section .container {
+        padding: 24px 16px !important;
+        min-height: 200px !important;
     }
     
     /* Hero title mobile */
@@ -100,32 +165,23 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    /* Tablet layout */
-    #emergencyCards {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 14px !important;
-    }
-    
-    .emergency-card {
-        height: 340px !important;
-        padding: 28px !important;
-    }
-    
     /* Hero adjustments for tablet */
-    .hero-section div[style*="width: 1920px"] {
-        width: 100% !important;
-        max-width: 1024px !important;
-        padding: 12px 40px !important;
+    .hero-section .container {
+        padding: 28px 32px !important;
+        min-height: 220px !important;
+    }
+    
+    .hero-section h1 {
+        font-size: 36px !important;
+    }
+    
+    .hero-section p {
+        font-size: 18px !important;
     }
 }
 
 @media (min-width: 1024px) {
     /* Desktop layout */
-    #emergencyCards {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 16px !important;
-    }
-    
     .emergency-card {
         height: 360px !important;
     }
