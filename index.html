@@ -11,11 +11,14 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600;700&family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600;700&family=Inter:wght@400;600;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- DaisyUI and Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50">
     <!-- Navbar -->
@@ -82,8 +85,377 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <!-- Emergency Cards Section (Left Side) -->
             <div class="lg:col-span-9">
-                <div id="emergencyCards" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                    <!-- Cards will be populated here -->
+                <div id="emergencyCards" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3" style="gap: 16px;">
+                    
+                    <!-- National Emergency Number Card -->
+                    <div class="bg-white emergency-card" style="height: 360px; border-radius: 16px; padding: 32px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); position: relative; display: flex; flex-direction: column;">
+                        <!-- Heart Icon -->
+                        <div class="cursor-pointer heart-icon" style="position: absolute; top: 32px; right: 32px;" onclick="handleHeartClick()">
+                            <i class="far fa-heart text-gray-400 text-xl hover:text-red-500 transition-colors"></i>
+                        </div>
+                        
+                        <!-- Service Icon -->
+                        <div style="width: 60px; height: 60px; background-color: #fef2f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <img src="assets/emergency.png" alt="Emergency" style="width: 40px; height: 40px;">
+                        </div>
+                        
+                        <!-- Service Names -->
+                        <div style="margin-bottom: 16px;">
+                            <h3 style="font-family: 'Hind Madurai', sans-serif; font-weight: 700; font-size: 24px; color: #000000; margin: 0 0 8px 0; text-align: left;">National Emergency Number</h3>
+                            <p style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 18px; color: #666666; margin: 0; text-align: left;">National Emergency</p>
+                        </div>
+                        
+                        <!-- Hotline Number -->
+                        <div style="margin-bottom: 12px;">
+                            <h2 style="font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 32px; color: #000000; margin: 0; text-align: left;">999</h2>
+                        </div>
+                        
+                        <!-- Category Badge -->
+                        <div style="margin-bottom: 20px; flex-grow: 1;">
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">All</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div style="display: flex; gap: 6px; margin-top: auto;">
+                            <button class="copy-btn" style="height: 40px; flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('999', 'National Emergency Number')">
+                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            </button>
+                            <button class="call-btn" style="height: 40px; flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('999', 'National Emergency Number')">
+                                <i class="fas fa-phone" style="color: white;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Police Helpline Card -->
+                    <div class="bg-white emergency-card" style="height: 360px; border-radius: 16px; padding: 32px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); position: relative;">
+                        <!-- Heart Icon -->
+                        <div class="cursor-pointer heart-icon" style="position: absolute; top: 32px; right: 32px;" onclick="handleHeartClick()">
+                            <i class="far fa-heart text-gray-400 text-xl hover:text-red-500 transition-colors"></i>
+                        </div>
+                        
+                        <!-- Service Icon -->
+                        <div style="width: 60px; height: 60px; background-color: #dbeafe; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <img src="assets/police.png" alt="Police" style="width: 40px; height: 40px;">
+                        </div>
+                        
+                        <!-- Service Names -->
+                        <div style="margin-bottom: 16px;">
+                            <h3 style="font-family: 'Hind Madurai', sans-serif; font-weight: 700; font-size: 24px; color: #000000; margin: 0 0 8px 0; text-align: left;">Police Helpline Number</h3>
+                            <p style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 18px; color: #666666; margin: 0; text-align: left;">Police</p>
+                        </div>
+                        
+                        <!-- Hotline Number -->
+                        <div style="margin-bottom: 16px;">
+                            <h2 style="font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 32px; color: #000000; margin: 0; text-align: left;">999</h2>
+                        </div>
+                        
+                        <!-- Category Badge -->
+                        <div style="margin-bottom: 24px;">
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Police</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div style="display: flex; gap: 6px;">
+                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('999', 'Police Helpline Number')">
+                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            </button>
+                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('999', 'Police Helpline Number')">
+                                <i class="fas fa-phone" style="color: white;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Fire Service Card -->
+                    <div class="bg-white emergency-card" style="height: 360px; border-radius: 16px; padding: 32px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); position: relative;">
+                        <!-- Heart Icon -->
+                        <div class="cursor-pointer heart-icon" style="position: absolute; top: 32px; right: 32px;" onclick="handleHeartClick()">
+                            <i class="far fa-heart text-gray-400 text-xl hover:text-red-500 transition-colors"></i>
+                        </div>
+                        
+                        <!-- Service Icon -->
+                        <div style="width: 60px; height: 60px; background-color: #fef2f2; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <img src="assets/fire-service.png" alt="Fire Service" style="width: 40px; height: 40px;">
+                        </div>
+                        
+                        <!-- Service Names -->
+                        <div style="margin-bottom: 16px;">
+                            <h3 style="font-family: 'Hind Madurai', sans-serif; font-weight: 700; font-size: 24px; color: #000000; margin: 0 0 8px 0; text-align: left;">Fire Service Number</h3>
+                            <p style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 18px; color: #666666; margin: 0; text-align: left;">Fire Service</p>
+                        </div>
+                        
+                        <!-- Hotline Number -->
+                        <div style="margin-bottom: 16px;">
+                            <h2 style="font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 32px; color: #000000; margin: 0; text-align: left;">999</h2>
+                        </div>
+                        
+                        <!-- Category Badge -->
+                        <div style="margin-bottom: 24px;">
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Fire</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div style="display: flex; gap: 6px;">
+                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('999', 'Fire Service Number')">
+                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            </button>
+                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('999', 'Fire Service Number')">
+                                <i class="fas fa-phone" style="color: white;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Ambulance Service Card -->
+                    <div class="bg-white emergency-card" style="height: 360px; border-radius: 16px; padding: 32px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); position: relative;">
+                        <!-- Heart Icon -->
+                        <div class="cursor-pointer heart-icon" style="position: absolute; top: 32px; right: 32px;" onclick="handleHeartClick()">
+                            <i class="far fa-heart text-gray-400 text-xl hover:text-red-500 transition-colors"></i>
+                        </div>
+                        
+                        <!-- Service Icon -->
+                        <div style="width: 60px; height: 60px; background-color: #fce7f3; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <img src="assets/ambulance.png" alt="Ambulance" style="width: 40px; height: 40px;">
+                        </div>
+                        
+                        <!-- Service Names -->
+                        <div style="margin-bottom: 16px;">
+                            <h3 style="font-family: 'Hind Madurai', sans-serif; font-weight: 700; font-size: 24px; color: #000000; margin: 0 0 8px 0; text-align: left;">Ambulance Service</h3>
+                            <p style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 18px; color: #666666; margin: 0; text-align: left;">Ambulance</p>
+                        </div>
+                        
+                        <!-- Hotline Number -->
+                        <div style="margin-bottom: 16px;">
+                            <h2 style="font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 28px; color: #000000; margin: 0; text-align: left;">1994-999999</h2>
+                        </div>
+                        
+                        <!-- Category Badge -->
+                        <div style="margin-bottom: 24px;">
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Health</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div style="display: flex; gap: 6px;">
+                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('1994-999999', 'Ambulance Service')">
+                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            </button>
+                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('1994-999999', 'Ambulance Service')">
+                                <i class="fas fa-phone" style="color: white;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Women & Child Helpline Card -->
+                    <div class="bg-white emergency-card" style="height: 360px; border-radius: 16px; padding: 32px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); position: relative;">
+                        <!-- Heart Icon -->
+                        <div class="cursor-pointer heart-icon" style="position: absolute; top: 32px; right: 32px;" onclick="handleHeartClick()">
+                            <i class="far fa-heart text-gray-400 text-xl hover:text-red-500 transition-colors"></i>
+                        </div>
+                        
+                        <!-- Service Icon -->
+                        <div style="width: 60px; height: 60px; background-color: #f3e8ff; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <i class="fas fa-female" style="color: #a855f7; font-size: 24px;"></i>
+                        </div>
+                        
+                        <!-- Service Names -->
+                        <div style="margin-bottom: 16px;">
+                            <h3 style="font-family: 'Hind Madurai', sans-serif; font-weight: 700; font-size: 24px; color: #000000; margin: 0 0 8px 0; text-align: left;">Women & Child Helpline</h3>
+                            <p style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 18px; color: #666666; margin: 0; text-align: left;">Women & Child Helpline</p>
+                        </div>
+                        
+                        <!-- Hotline Number -->
+                        <div style="margin-bottom: 16px;">
+                            <h2 style="font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 32px; color: #000000; margin: 0; text-align: left;">109</h2>
+                        </div>
+                        
+                        <!-- Category Badge -->
+                        <div style="margin-bottom: 24px;">
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Help</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div style="display: flex; gap: 6px;">
+                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('109', 'Women & Child Helpline')">
+                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            </button>
+                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('109', 'Women & Child Helpline')">
+                                <i class="fas fa-phone" style="color: white;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Anti-Corruption Helpline Card -->
+                    <div class="bg-white emergency-card" style="height: 360px; border-radius: 16px; padding: 32px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); position: relative;">
+                        <!-- Heart Icon -->
+                        <div class="cursor-pointer heart-icon" style="position: absolute; top: 32px; right: 32px;" onclick="handleHeartClick()">
+                            <i class="far fa-heart text-gray-400 text-xl hover:text-red-500 transition-colors"></i>
+                        </div>
+                        
+                        <!-- Service Icon -->
+                        <div style="width: 60px; height: 60px; background-color: #fed7aa; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <i class="fas fa-shield-alt" style="color: #ea580c; font-size: 24px;"></i>
+                        </div>
+                        
+                        <!-- Service Names -->
+                        <div style="margin-bottom: 16px;">
+                            <h3 style="font-family: 'Hind Madurai', sans-serif; font-weight: 700; font-size: 24px; color: #000000; margin: 0 0 8px 0; text-align: left;">Anti-Corruption Helpline</h3>
+                            <p style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 18px; color: #666666; margin: 0; text-align: left;">Anti-Corruption</p>
+                        </div>
+                        
+                        <!-- Hotline Number -->
+                        <div style="margin-bottom: 16px;">
+                            <h2 style="font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 32px; color: #000000; margin: 0; text-align: left;">106</h2>
+                        </div>
+                        
+                        <!-- Category Badge -->
+                        <div style="margin-bottom: 24px;">
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Govt</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div style="display: flex; gap: 6px;">
+                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('106', 'Anti-Corruption Helpline')">
+                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            </button>
+                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('106', 'Anti-Corruption Helpline')">
+                                <i class="fas fa-phone" style="color: white;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Electricity Helpline Card -->
+                    <div class="bg-white emergency-card" style="height: 360px; border-radius: 16px; padding: 32px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); position: relative;">
+                        <!-- Heart Icon -->
+                        <div class="cursor-pointer heart-icon" style="position: absolute; top: 32px; right: 32px;" onclick="handleHeartClick()">
+                            <i class="far fa-heart text-gray-400 text-xl hover:text-red-500 transition-colors"></i>
+                        </div>
+                        
+                        <!-- Service Icon -->
+                        <div style="width: 60px; height: 60px; background-color: #fef3c7; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <i class="fas fa-bolt" style="color: #d97706; font-size: 24px;"></i>
+                        </div>
+                        
+                        <!-- Service Names -->
+                        <div style="margin-bottom: 16px;">
+                            <h3 style="font-family: 'Hind Madurai', sans-serif; font-weight: 700; font-size: 24px; color: #000000; margin: 0 0 8px 0; text-align: left;">Electricity Helpline</h3>
+                            <p style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 18px; color: #666666; margin: 0; text-align: left;">Electricity Outage</p>
+                        </div>
+                        
+                        <!-- Hotline Number -->
+                        <div style="margin-bottom: 16px;">
+                            <h2 style="font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 32px; color: #000000; margin: 0; text-align: left;">16216</h2>
+                        </div>
+                        
+                        <!-- Category Badge -->
+                        <div style="margin-bottom: 24px;">
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Electricity</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div style="display: flex; gap: 6px;">
+                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('16216', 'Electricity Helpline')">
+                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            </button>
+                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('16216', 'Electricity Helpline')">
+                                <i class="fas fa-phone" style="color: white;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Brac Helpline Card -->
+                    <div class="bg-white emergency-card" style="height: 360px; border-radius: 16px; padding: 32px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); position: relative;">
+                        <!-- Heart Icon -->
+                        <div class="cursor-pointer heart-icon" style="position: absolute; top: 32px; right: 32px;" onclick="handleHeartClick()">
+                            <i class="far fa-heart text-gray-400 text-xl hover:text-red-500 transition-colors"></i>
+                        </div>
+                        
+                        <!-- Service Icon -->
+                        <div style="width: 60px; height: 60px; background-color: #dcfce7; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <img src="assets/brac.png" alt="BRAC" style="width: 40px; height: 40px;">
+                        </div>
+                        
+                        <!-- Service Names -->
+                        <div style="margin-bottom: 16px;">
+                            <h3 style="font-family: 'Hind Madurai', sans-serif; font-weight: 700; font-size: 24px; color: #000000; margin: 0 0 8px 0; text-align: left;">Brac Helpline</h3>
+                            <p style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 18px; color: #666666; margin: 0; text-align: left;">Brac</p>
+                        </div>
+                        
+                        <!-- Hotline Number -->
+                        <div style="margin-bottom: 16px;">
+                            <h2 style="font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 32px; color: #000000; margin: 0; text-align: left;">16445</h2>
+                        </div>
+                        
+                        <!-- Category Badge -->
+                        <div style="margin-bottom: 24px;">
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">NGO</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div style="display: flex; gap: 6px;">
+                            <button class="copy-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('16445', 'Brac Helpline')">
+                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            </button>
+                            <button class="call-btn" style="height: 40px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('16445', 'Brac Helpline')">
+                                <i class="fas fa-phone" style="color: white;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Bangladesh Railway Helpline Card -->
+                    <div class="bg-white emergency-card" style="height: 360px; border-radius: 16px; padding: 32px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); position: relative; display: flex; flex-direction: column;">
+                        <!-- Heart Icon -->
+                        <div class="cursor-pointer heart-icon" style="position: absolute; top: 32px; right: 32px;" onclick="handleHeartClick()">
+                            <i class="far fa-heart text-gray-400 text-xl hover:text-red-500 transition-colors"></i>
+                        </div>
+                        
+                        <!-- Service Icon -->
+                        <div style="width: 60px; height: 60px; background-color: #dbeafe; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                            <img src="assets/Bangladesh-Railway.png" alt="Bangladesh Railway" style="width: 40px; height: 40px;">
+                        </div>
+                        
+                        <!-- Service Names -->
+                        <div style="margin-bottom: 16px;">
+                            <h3 style="font-family: 'Hind Madurai', sans-serif; font-weight: 700; font-size: 24px; color: #000000; margin: 0 0 8px 0; text-align: left;">Bangladesh Railway Helpline</h3>
+                            <p style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 18px; color: #666666; margin: 0; text-align: left;">Bangladesh Railway</p>
+                        </div>
+                        
+                        <!-- Hotline Number -->
+                        <div style="margin-bottom: 12px;">
+                            <h2 style="font-family: system-ui, -apple-system, sans-serif; font-weight: 700; font-size: 32px; color: #000000; margin: 0; text-align: left;">163</h2>
+                        </div>
+                        
+                        <!-- Category Badge -->
+                        <div style="margin-bottom: 20px; flex-grow: 1;">
+                            <span style="background-color: #F2F2F2; color: #666666; padding: 6px 16px; border-radius: 9999px; font-size: 14px; font-weight: 500;">Travel</span>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div style="display: flex; gap: 6px; margin-top: auto;">
+                            <button class="copy-btn" style="height: 40px; flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 16px; border-radius: 6px; background-color: #f3f4f6; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCopyClick('163', 'Bangladesh Railway Helpline')">
+                                <i class="far fa-copy" style="color: #5C5C5C;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: #5C5C5C;">Copy</span>
+                            </button>
+                            <button class="call-btn" style="height: 40px; flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 16px; border-radius: 6px; background-color: #16a34a; border: none; cursor: pointer; transition: all 0.2s ease;" onclick="handleCallClick('163', 'Bangladesh Railway Helpline')">
+                                <i class="fas fa-phone" style="color: white;"></i>
+                                <span style="font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; color: white;">Call</span>
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             
